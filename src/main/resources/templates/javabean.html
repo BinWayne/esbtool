@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>ESB</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}"></link>
+</head>
+<body class="container">
+
+
+<br/>
+<h1>ESB request & response</h1>
+<br/>
+<input class="btn btn-info" type="button" value="返回" onclick="history.back()"/>
+<button class="btn btn-info" id="btn"
+        data-clipboard-action="copy"
+        data-clipboard-target="#reqBean">
+    <span>Copy</span>
+</button>
+<script th:src=@{/static/js/clipboard.js} ></script>
+<!--<script src="../static/js/clipboard.js" ></script>-->
+<script type="text/javascript">
+    var btn = document.getElementById('btn');
+<!--    alert(btn)-->
+    var clipboard = new ClipboardJS(btn);
+    clipboard.on('success', function(e){
+        //console.log(e);
+        alert("复制成功");
+    });
+    clipboard.on('error', function(e){
+            console.log(e);
+	     alert("复制失败，请连续点击链接三次复制");
+    });
+    </script>
+<br/><br/>
+<div class="with:80%">
+    <div>
+    <textarea th:inline="text" id="reqBean" class="form-control" aria-label="With textarea" rows="40">[[${result}]]
+    </textarea>
+
+    </div>
+</div>
+
+</body>
+</html>

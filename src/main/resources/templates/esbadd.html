@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>ESB</title>
+    <link rel="stylesheet" th:href="@{/static/css/bootstrap.css}"></link>
+</head>
+<body class="container">
+<br/>
+<div class="container">
+    <div class="nav flex-column justify-content-center bg-light text-center text-success" style="height:50px;">
+        <h1>添加 ESB request & response</h1>
+    </div>
+</div>
+
+<br/><br/>
+<div class="with:80%">
+    <form class="form-horizontal"   th:action="@{/add}"  method="post">
+        <div class="form-group">
+            <label for="reqBody" class="col-sm-2 control-label">reqBody</label>
+            <div class="col-sm-10">
+                <textarea class="form-control" aria-label="With textarea" rows="10" id="reqBody" name="reqBody"></textarea>
+<!--                <input type="textarea" class="form-control" name="reqBody"  id="reqBody" placeholder="reqBody"/>-->
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="resBody" class="col-sm-2 control-label" >resBody</label>
+            <div class="col-sm-10">
+                <textarea class="form-control" aria-label="With textarea" rows="10" id="resBody" name="resBody"></textarea>
+<!--                <input type="password" class="form-control" name="password" id="password" placeholder="Password"/>-->
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <input type="submit" value="Submit" class="btn btn-info" />
+                &nbsp; &nbsp; &nbsp;
+                <input type="reset" value="Reset" class="btn btn-info" />
+            </div>
+
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
